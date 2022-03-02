@@ -21,4 +21,27 @@ def b16_decode(cipher):
     #return
     return dec
 
-#
+#unshift the text
+def unshift(c, k):
+    t1 = ord(c) - LOWERCASE_OFFSET
+    t2 = ord(k) - LOWERCASE_OFFSET
+    return ALPHABET[(t1 - t2) % len(ALPHABET)]
+
+# encrypted flag
+enc = "mlnklfnknljflfmhjimkmhjhmljhjomhmmjkjpmmjmjkjpjojgjmjpjojojnjojmmkmlmijimhjmmj"
+
+# loop through all possible keys
+for key in ALPHABET:
+    # initialize string
+    s = ""
+
+    #loop through the encrypted text
+    for i,c in enumerate(enc):
+        #unshift it based on key
+        s += unshift(c, key[i % len(key)]) 
+
+    #decode
+    s = b16_decode(s)
+
+    #print key
+    print(s)
