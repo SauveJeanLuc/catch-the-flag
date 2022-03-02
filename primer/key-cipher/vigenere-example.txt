@@ -1,0 +1,14 @@
+Encrypted-text: WMNZQAJ
+           key: HELLOHE
+
+pairs:
+
+(W,H) -> p
+(M,E) -> i
+(N,L) -> c
+(Z,L) -> o
+(Q,O) -> c
+(A,H) -> t
+(J,E) -> f
+
+Using Vigenere table
